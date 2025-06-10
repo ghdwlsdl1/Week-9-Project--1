@@ -39,6 +39,7 @@ public class PopupBank : MonoBehaviour
     public GameObject popupError;           // 에러 팝업 창
     public Button errorPopupConfirmButton;  // 에러 확인 버튼
 
+
     // 버튼 이벤트 연결
     private void Awake()
     {
@@ -75,6 +76,7 @@ public class PopupBank : MonoBehaviour
     public void Refresh()
     {
         var data = GameManager.Instance.userData;
+        Debug.Log("불러온 이름: " + data.userName);
 
         userNameText.text = data.userName;
         balanceText.text = string.Format("{0:N0}", data.balance);
